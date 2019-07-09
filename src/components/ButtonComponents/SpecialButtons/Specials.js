@@ -3,13 +3,13 @@ import SpecialButton from "./SpecialButton";
 
 import { specials } from "../../../data";
 
-const Specials = () => {
+const Specials = props => {
   const [theseSpecials, setTheseSpecials] = useState(specials);
 
   return (
     <div>
       {theseSpecials.map(special => (
-        <SpecialButton special={special} />
+        <SpecialButton clearDisplay={props.clearDisplay} special={special} />
       ))}
       {/* STEP 3 - Use .map() to iterate over your array data and return a button
        component matching the name on the provided file. Pass
