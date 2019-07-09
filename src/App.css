@@ -1,0 +1,42 @@
+.container {
+  width: 500px;
+  margin: 30px auto;
+  height: 800px;
+  background-color: firebrick;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.numbers-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 75%;
+}
+
+.button {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 50%;
+
+  color: white;
+  font-size: 2.2rem;
+  border: none;
+}
+
+.number {
+  background-color: rgb(0, 44, 114);
+}
+
+.operator {
+  background-color: rgb(72, 165, 228);
+}
+
+.display-container {
+  width: 100%;
+  background-color: rgb(49, 49, 49);
+  height: 100px;
+  border-radius: 50px;
+  margin: 20px 0;
+}
