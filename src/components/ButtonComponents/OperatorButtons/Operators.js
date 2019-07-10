@@ -3,12 +3,12 @@ import OperatorButton from "./OperatorButton";
 
 import { operators } from "../../../data";
 
-const Operators = () => {
+const Operators = ({ handleInput }) => {
   const [theseOperators, setTheseOperators] = useState(operators);
   return (
     <div>
       {theseOperators.map(operator => (
-        <OperatorButton operator={operator} />
+        <OperatorButton handleInput={handleInput} operator={operator} />
       ))}
     </div>
   );

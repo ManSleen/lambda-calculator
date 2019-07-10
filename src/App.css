@@ -74,3 +74,8 @@
 .calculator-left {
   width: 75%;
 }
+
+.btn-0 {
+  width: 200px;
+  border-radius: 50px;
+}

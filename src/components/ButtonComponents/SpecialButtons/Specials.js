@@ -9,7 +9,7 @@ const Specials = props => {
   return (
     <div>
       {theseSpecials.map(special => (
-        <SpecialButton clearDisplay={props.clearDisplay} special={special} />
+        <SpecialButton handleInput={props.handleInput} special={special} />
       ))}
       {/* STEP 3 - Use .map() to iterate over your array data and return a button
        component matching the name on the provided file. Pass

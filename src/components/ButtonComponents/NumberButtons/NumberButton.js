@@ -1,13 +1,13 @@
 import React from "react";
 
-const NumberButton = props => {
-  console.log(props.number);
+const NumberButton = ({ handleInput, number }) => {
   return (
     <button
-      onClick={() => props.calculateNums(props.number)}
-      className="button number"
+      onClick={e => handleInput(e, number)}
+      className={`button number btn-${number}`}
+      value={number}
     >
-      {props.number}
+      {number}
     </button>
   );
 };

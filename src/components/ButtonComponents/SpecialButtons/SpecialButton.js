@@ -1,8 +1,12 @@
 import React from "react";
 
-const SpecialButton = ({ clearDisplay, special }) => {
+const SpecialButton = ({ handleInput, special }) => {
   return (
-    <button onClick={clearDisplay} className="button special">
+    <button
+      onClick={e => handleInput(e)}
+      className="button special"
+      value={special}
+    >
       {special}
     </button>
   );
