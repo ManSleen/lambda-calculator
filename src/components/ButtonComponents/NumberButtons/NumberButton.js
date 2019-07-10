@@ -1,9 +1,15 @@
 import React from "react";
 
-const NumberButton = () => {
+const NumberButton = ({ handleInput, number }) => {
   return (
-    <>
-      {/* Display a button element rendering the data being passed down from the parent container on props */}
-    </>
+    <button
+      onClick={e => handleInput(e, number)}
+      className={`button number btn-${number}`}
+      value={number}
+    >
+      {number}
+    </button>
   );
 };
+
+export default NumberButton;
