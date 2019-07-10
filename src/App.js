@@ -29,16 +29,47 @@ function App() {
         setDisplay(display + ".");
         console.log("display: ", display);
       }
+    } else if (waitingForSecondNum === true) {
+      setDisplay(num);
+      setWaitingForSecondNum(false);
     } else {
       let currentNum = display === "0" ? num : display + num;
       setDisplay(currentNum);
     }
   };
 
+  const handleOperator = e => {
+    const inputValue = parseFloat(display);
+    if (firstNum === null) {
+      setFirstNum(inputValue);
+    } else if (operator) {
+      const result = performCalculation[operator](firstNum, inputValue);
+      setDisplay(String(result));
+      setFirstNum(null);
+    }
+    setWaitingForSecondNum(true);
+    setOperator(e.target.value);
+
+    console.log("handleOperator was clicked! Value: ", e.target.value);
+  };
+
+  const performCalculation = {
+    "/": (firstNum, secondNum) => firstNum / secondNum,
+
+    "*": (firstNum, secondNum) => firstNum * secondNum,
+
+    "+": (firstNum, secondNum) => firstNum + secondNum,
+
+    "-": (firstNum, secondNum) => firstNum - secondNum,
+
+    "=": (firstNum, secondNum) => secondNum
+  };
   // const evaluateDisplay = () => {
   //   console.log(display);
   // };
-
+  console.log("firstNum: ", firstNum);
+  console.log("waitingForSecondNum: ", waitingForSecondNum);
+  console.log("operator: ", operator);
   return (
     <div className="container">
       <Logo />
@@ -49,12 +80,8 @@ function App() {
           <Numbers handleInput={handleInput} />
         </div>
         <div className="calculator-right">
-          <Operators handleInput={handleInput} />
+          <Operators handleOperator={handleOperator} />
         </div>
-      </div>
-
-      <div className="App">
-        {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
       </div>
     </div>
   );
