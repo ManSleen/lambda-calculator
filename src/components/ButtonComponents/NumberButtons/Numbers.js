@@ -5,13 +5,13 @@ import { numbers } from "../../../data";
 
 import "../../../App.css";
 
-const Numbers = props => {
+const Numbers = ({ handleInput }) => {
   const [theseNumbers, setTheseNumbers] = useState(numbers);
-  // STEP 2 - add the imported data to state
+
   return (
     <div className="numbers-container">
       {theseNumbers.map(number => (
-        <NumberButton handleInput={props.handleInput} number={number} />
+        <NumberButton key={number} handleInput={handleInput} number={number} />
       ))}
     </div>
   );
